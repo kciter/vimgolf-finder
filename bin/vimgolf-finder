@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
+
+require 'vimgolf_finder'
+
+begin
+  VimGolfFinder::CLI.start(ARGV)
+rescue Interrupt => e
+  puts
+  VimGolfFinder.ui.error(e)
+  VimGolf.ui.say("Quitting...")
+  exit(1)
+end
