@@ -80,20 +80,26 @@ module VimGolfFinder
     private
     def print_challenge(id)
       VimGolfFinder.ui.log ''
-      VimGolfFinder.ui.warn 'Waiting...'
-      challenge = VimGolfFinder.parser.get_challenge(id)
-      challenge.print_detail
+
+      result = VimGolfFinder.ui.ask 'Open your web browser? (y/n)'
+      if result.eql?('y') || result.eql?('yes')
+        Launchy.open("http://vimgolf.com/challenges/#{id}")
+      else
+        VimGolfFinder.ui.warn 'Waiting...'
+        challenge = VimGolfFinder.parser.get_challenge(id)
+        challenge.print_detail
+      end
     end
 
     def play(id)
       result = VimGolfFinder.ui.ask 'Do you want to play? (y/n)'
 
-      if result.eql?('y')
+      if result.eql?('y') || result.eql?('yes')
         system("vimgolf put #{id}")
 
         solves = VimGolfFinder.ui.ask 'Solves? (y/n)'
 
-        if solves
+        if solves.eql?('y') || solves.eql?('yes')
           VimGolfFinder::Challenge.solve(id)
           VimGolfFinder.ui.info "[\u2713] Checked!"
         end

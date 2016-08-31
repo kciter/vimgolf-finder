@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'nokogiri', '~> 1.6'
   s.add_dependency 'thor', '~> 0.19.1'
+  s.add_dependency 'launchy', '~> 2.0'
 
   s.add_development_dependency 'bundler', '~> 0'
   s.add_development_dependency 'rake', '~> 0'
