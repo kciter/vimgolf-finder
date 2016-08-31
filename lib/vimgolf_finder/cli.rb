@@ -49,7 +49,7 @@ module VimGolfFinder
       end
       challenges = challenges[(limit * (page-1))...(limit * page)]
       challenges.each_with_index do |challenge, index|
-        challenge.print(index)
+        challenge.print(index+1)
       end
 
       number = VimGolfFinder.ui.ask 'Choose challenge number.'
@@ -70,7 +70,7 @@ module VimGolfFinder
     def random
       challenges = VimGolfFinder.parser.fetch_challenges
       challenge = challenges.shuffle.first
-      challenge.print(challenge.id)
+      challenge.print
 
       id = challenge.id
       print_challenge(id)

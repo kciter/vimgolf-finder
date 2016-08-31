@@ -4,7 +4,7 @@ module VimGolfFinder
     attr_accessor :description
     attr_accessor :start_file, :end_file, :view_diff
 
-    def print(index)
+    def print(index = 1)
       if self.solved?
         VimGolfFinder.ui.log "#{index}. \e[37m#{self.title}\e[0m - #{self.entries} entries (\e[33m#{self.id}\e[0m) [\u2713]"
       else
