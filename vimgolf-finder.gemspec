@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'thor', '~> 0.19.1'
   s.add_dependency 'launchy', '~> 2.0'
 
-  s.add_development_dependency 'bundler', '~> 1.12'
-  s.add_development_dependency 'rake', '~> 11.2'
-  s.add_development_dependency 'rspec', '~> 3.5'
+  s.add_development_dependency 'bundler'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec'
 end
