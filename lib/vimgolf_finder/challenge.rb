@@ -37,7 +37,7 @@ module VimGolfFinder
       end
 
       file.readlines.each do |line|
-        if line.eql?(self.id)
+        if line.strip.eql?(self.id)
           return true
         end
       end
