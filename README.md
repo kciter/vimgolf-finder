@@ -20,7 +20,7 @@ Commands:
   vimgolf-finder random          # Pick one at random from VimGolf challenges
 ```
 
-### List
+### List 🔎
 Show VimGolf challenges from 'http://vimgolf.com/'.
 ```
 $ vimgolf-finder list
@@ -59,7 +59,7 @@ Options:
                             # Default: 1
 ```
 
-### Random
+### Random 🔎
 Pick one at random from VimGolf challenges
 ```
 $ vimgolf-finder random
