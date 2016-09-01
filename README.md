@@ -7,7 +7,7 @@ Simple VimGolf challenge finder. It just toy project for me! :smile:
 [![asciicast](https://asciinema.org/a/1whcqi8pjldxi767iiknqxeil.png)](https://asciinema.org/a/1whcqi8pjldxi767iiknqxeil)
 
 ## Installation
-Add this line to your application's Gemfile:
+Paste this at a terminal prompt:
 ```
 $ gem install vimgolf-finder
 ```
