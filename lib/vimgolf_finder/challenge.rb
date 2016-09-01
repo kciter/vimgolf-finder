@@ -51,7 +51,7 @@ module VimGolfFinder
         File.new(path, File::CREAT|File::TRUNC|File::RDWR, 0644)
       end
 
-      File.open(path, 'a') { |file| file.write(id) }
+      File.open(path, 'a') { |file| file.write("#{id}\n") }
     end
   end
 end
