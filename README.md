@@ -18,6 +18,7 @@ Commands:
   vimgolf-finder help [COMMAND]  # Describe available commands or one specific command
   vimgolf-finder list            # Show VimGolf challenges
   vimgolf-finder random          # Pick one at random from VimGolf challenges
+  vimgolf-finder solves          # Show solved VimGolf challenges
 ```
 
 ### List 🔎
@@ -113,8 +114,7 @@ Do you want to play? (y/n) y
 # Playing VimGolf...
 
 Thanks for playing!
-Solves? (y/n) n
-$
+Solves? (y/n) y
 ```
 
 ## TODO
