@@ -6,7 +6,7 @@ module VimGolfFinder
 
     def print(index = 1)
       if self.solved?
-        VimGolfFinder.ui.log "#{index}. \e[37m#{self.title}\e[0m - #{self.entries} entries (\e[33m#{self.id}\e[0m) [\u2713]"
+        VimGolfFinder.ui.log "#{index}. \e[37m#{self.title}\e[0m - #{self.entries} entries (\e[33m#{self.id}\e[0m) \e[32m[\u2713]\e[0m"
       else
         VimGolfFinder.ui.log "#{index}. \e[37m#{self.title}\e[0m - #{self.entries} entries (\e[33m#{self.id}\e[0m)"
       end

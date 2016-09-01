@@ -77,6 +77,35 @@ module VimGolfFinder
       play(id)
     end
 
+    desc 'solves', 'Show solved VimGolf challenges'
+    def solves
+      challenges = VimGolfFinder.parser.fetch_challenges
+
+      solved_challenges = []
+      challenges.each do |challenge|
+        if challenge.solved?
+          solved_challenges << challenge
+        end
+      end
+
+      solved_challenges.each_with_index do |challenge, index|
+        challenge.print(index+1)
+      end
+
+      number = VimGolfFinder.ui.ask 'Choose challenge number.'
+      number = number.to_i
+      if number.instance_of? Fixnum
+        if number < 1 or number > solved_challenges.count
+          VimGolfFinder.ui.error 'Invalid number'
+          return
+        end
+
+        id = challenges[number-1].id
+        print_challenge(id)
+        play(id)
+      end
+    end
+
     private
     def print_challenge(id)
       VimGolfFinder.ui.log ''
