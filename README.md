@@ -98,6 +98,22 @@ Do you want to play? (y/n) y
 
 Thanks for playing!
 Solves? (y/n) n
+```
+
+### Solves 🔎
+Show solved VimGolf challenges
+```
+$ vimgolf-finder solves
+1. Simple, Practical, and Common - 7953 entries (55b18bbea9c2c30d04000001) [✓]
+Choose challenge number. 1
+
+Open your web browser? (y/n) y
+Do you want to play? (y/n) y
+
+# Playing VimGolf...
+
+Thanks for playing!
+Solves? (y/n) n
 $
 ```
 
