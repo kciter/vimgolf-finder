@@ -113,8 +113,7 @@ Do you want to play? (y/n) y
 # Playing VimGolf...
 
 Thanks for playing!
-Solves? (y/n) n
-$
+Solves? (y/n) y
 ```
 
 ## TODO
