@@ -5,7 +5,7 @@ module VimGolfFinder
     def fetch_challenges
       challenges = []
 
-      doc = Nokogiri::HTML(open(BASE_URL))
+      doc = Nokogiri::HTML(URI.open(BASE_URL))
       doc.css('.grid_7 > div').each do |div|
         challengeDOM = div.at_css('h5.challenge')
         aTAG = challengeDOM.at_css('a')
@@ -22,7 +22,7 @@ module VimGolfFinder
     def get_challenge(id)
       challenge = VimGolfFinder::Challenge.new
 
-      doc = Nokogiri::HTML(open("#{BASE_URL}/challenges/#{id}", 'Accept' => 'text/html'))
+      doc = Nokogiri::HTML(URI.open("#{BASE_URL}/challenges/#{id}", 'Accept' => 'text/html'))
 
       doc.css('.grid_7:not(#about)').each do |dom|
         challenge.id = id
@@ -30,7 +30,7 @@ module VimGolfFinder
         challenge.description = dom.at_css('p').content
         challenge.start_file = dom.at_css('.prettyprint').content
         challenge.end_file = dom.css('.prettyprint')[1].content
-        challenge.view_diff = dom.at_css('pre.diff').content
+        challenge.view_diff = dom.at_css('pre#diff').content
       end
 
       challenge

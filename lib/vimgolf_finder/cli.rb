@@ -54,7 +54,7 @@ module VimGolfFinder
 
       number = VimGolfFinder.ui.ask 'Choose challenge number.'
       number = number.to_i
-      if number.instance_of? Fixnum
+      if number.instance_of? Integer
         if number < 1 or number > limit
           VimGolfFinder.ui.error 'Invalid number'
           return
@@ -94,7 +94,7 @@ module VimGolfFinder
 
       number = VimGolfFinder.ui.ask 'Choose challenge number.'
       number = number.to_i
-      if number.instance_of? Fixnum
+      if number.instance_of? Integer
         if number < 1 or number > solved_challenges.count
           VimGolfFinder.ui.error 'Invalid number'
           return
@@ -124,7 +124,10 @@ module VimGolfFinder
       result = VimGolfFinder.ui.ask 'Do you want to play? (y/n)'
 
       if result.eql?('y') || result.eql?('yes')
-        system("vimgolf put #{id}")
+        if system("vimgolf put #{id}") == nil
+          VimGolfFinder.ui.error 'You need to install vimgolf. e.g. `gem install vimgolf`.'
+          return
+        end
 
         solves = VimGolfFinder.ui.ask 'Solves? (y/n)'
 
